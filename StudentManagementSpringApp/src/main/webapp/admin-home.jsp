@@ -9,10 +9,28 @@
     <title>Admin | Home</title>
 </head>
 <body>
+
+	<% 
+	
+		response.setHeader("Pragma", "No-cache");
+	    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+	    response.setDateHeader("Expires", -1);
+		
+		String username = (String)session.getAttribute("username");
+	
+		if(username == null){
+			
+			response.sendRedirect("/");
+			
+		}
+	
+	%>
+	
    <h1>Admin Panel</h1> 
    
    <a href="/admin/teacher">Manage Teachers</a><br>
-   <a href="/admin/subject">Manage Subjects</a>
+   <a href="/admin/subject">Manage Subjects</a><br>
+   <a href="/logout">Logout</a>
    
 </body>
 </html>

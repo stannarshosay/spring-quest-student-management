@@ -21,7 +21,7 @@ public class Teacher {
 	@Column(nullable = false)
 	private String name;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.MERGE)
 	private Subject subject;
 
 	@Column(nullable = false)

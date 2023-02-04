@@ -1,7 +1,5 @@
-<%@page import="java.io.IOException"%>
+<%@page import="com.quest.studentmanagement.models.Subject"%>
 <%@page import="java.util.List"%>
-<%@page import="java.util.Arrays"%>
-<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -20,15 +18,21 @@
 <body>
 
 
-	<%
-		//list of subjects
-		
-		
+	<%	
 	
+		response.setHeader("Pragma", "No-cache");
+	    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+	    response.setDateHeader("Expires", -1);
+    
+		String username = (String)session.getAttribute("username");
+		
+		if(username == null){
+			
+			response.sendRedirect("/");
+			
+		}
+		List<Subject> subjects = (List<Subject>)request.getAttribute("subjects");	
 	%>
-
-
-
 	
    	<a href="/admin">Go Back</a><br>
    
@@ -42,25 +46,32 @@
 		 <thead>
 			 <tr>
 				<th>ID</th> 
-				<th>Subject</th> 
+				<th>Subject</th>
+				<th>Update</th>
+				<th>Remove</th>
 			 </tr>			 
 		 </thead>  
 		 <tbody>
+		 
+		 
+			 <% 
+			    for(Subject subject : subjects) {
+			 %>
+				 <tr>
+					 <td><%=subject.getId()%></td>
+					 <td><%=subject.getSubjectName()%></td>
+					 <td>
+					 	<a href="/admin/subject/update/<%=subject.getId()%>">Update</a>
+					 </td>
+					 <td>
+					 	<a href="/admin/subject/remove/<%=subject.getId()%>" style="color:red">Remove</a>
+					 </td>
+				 </tr>
+			 <%
+			    }
+			 %>
 			 
-			 <tr>
-				 <td>1</td>
-				 <td>Maths</td>
-			 </tr>
 			 
-			 <tr>
-				 <td>2</td>
-				 <td>Science</td>
-			 </tr>
-			 
-			 <tr>
-				 <td>3</td>
-				 <td>History</td>
-			 </tr>
 			 
 		 </tbody>  
 		   
