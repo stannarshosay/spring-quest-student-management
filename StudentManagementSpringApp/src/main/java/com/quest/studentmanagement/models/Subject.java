@@ -16,7 +16,7 @@ public class Subject {
 	private Integer id;
 	
 	@Column(nullable = false)
-	private String subject;
+	private String subjectName;
 	
 	public Subject() {
 		
@@ -30,12 +30,12 @@ public class Subject {
 		this.id = id;
 	}
 
-	public String getSubject() {
-		return subject;
+	public String getSubjectName() {
+		return subjectName;
 	}
 
-	public void setSubject(String subject) {
-		this.subject = subject;
+	public void setSubjectName(String subjectName) {
+		this.subjectName = subjectName;
 	}
 	
 }

@@ -1,3 +1,9 @@
+<%@page import="java.io.IOException"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.Arrays"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +18,17 @@
 	</style>
 </head>
 <body>
+
+
+	<%
+		//list of subjects
+		
+		
+	
+	%>
+
+
+
 	
    	<a href="/admin">Go Back</a><br>
    

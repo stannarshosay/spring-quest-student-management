@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,10 +20,8 @@
    	<h1>Add Subject</h1> 
    	
    	<form action="/admin/subject/add" method="POST">
-		   
-		<input type="text" name="id" value="0">   
-		   
-		<input type="text" name="subject" placeholder="Enter Subject" title="Subject's Name">
+   			   		   
+		<input type="text" name="subjectName" placeholder="Enter Subject" title="Subject's Name" required>
 		   
    		<button type="submit" title="Click to add subject">Add</button>
    		
